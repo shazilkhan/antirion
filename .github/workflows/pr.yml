@@ -62,8 +62,9 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - run: rustup toolchain install nightly --profile minimal
-      - run: cargo +nightly install cargo-fuzz --locked
+      # fuzz/rust-toolchain.toml pins the nightly; rustup installs it on first use.
+      - run: cargo install cargo-fuzz --locked
+        working-directory: fuzz
       - name: Every parser's fuzz target, briefly
         env:
           RUSTFLAGS: ""

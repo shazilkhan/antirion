@@ -1,0 +1,6 @@
+# Fuzzing needs a nightly compiler. It is pinned because the release workflow won't publish while a
+# fuzz job fails, so a regression in a new nightly would otherwise stop releases and every pull
+# request. Move the date forward on purpose, once the new nightly builds these targets.
+[toolchain]
+channel = "nightly-2026-10-31"
+profile = "minimal"

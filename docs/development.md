@@ -1392,7 +1392,8 @@ sequences against `MemoryCounters`.
   the named targets (every target by default) from their seeds; the nightly runs each target in its own
   job for 30 minutes. Parsers private to the pipeline are reached through
   `antirion_pipeline::fuzzing`, compiled only with `--cfg fuzzing`. Keep the target directory out of
-  the repository: `cargo +nightly fuzz run -s none --target-dir <dir> <target>`.
+  the repository: `cargo fuzz run -s none --target-dir <dir> <target>`, from `fuzz/`, whose
+  `rust-toolchain.toml` pins the nightly.
 
 ## Known gaps of extensions, deployment and hardening
 

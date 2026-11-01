@@ -91,8 +91,8 @@ embedded first (the commands are in [Run the console](#run-the-console)).
 - The Helm chart: `helm lint deploy/helm/antirion --set mode=standalone` and `--set mode=cluster`.
 - The benchmark workspace in `bench/`: `cargo fmt`, `cargo clippy` and `cargo test` with
   `--manifest-path bench/Cargo.toml`.
-- Parsers: `ci/fuzz.sh 30` runs every fuzz target briefly (it needs a nightly toolchain and
-  `cargo-fuzz`).
+- Parsers: `ci/fuzz.sh 30` runs every fuzz target briefly (it needs `cargo-fuzz`; rustup
+  installs the nightly pinned in `fuzz/rust-toolchain.toml`).
 - The image: `docker/test/smoke.sh <image>` and `docker/test/quickstart.sh <image>` after
   `docker build -f docker/Dockerfile`.
 
