@@ -1,6 +1,6 @@
 # The fuzz targets of the parsers that read untrusted input: request bodies of every dialect, the stream
 # framings, upstream error bodies, URLs, credential and forwarding headers, tags and configuration
-# documents. Run one with `cargo +nightly fuzz run <target>` (cargo-fuzz); `cargo fuzz list` names them.
+# documents. Run one from this directory with `cargo fuzz run <target>` (cargo-fuzz); `cargo fuzz list` names them.
 # It is its own workspace, so libFuzzer never reaches the gateway's lock file.
 [package]
 name = "antirion-fuzz"
